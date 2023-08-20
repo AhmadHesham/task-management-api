@@ -1,10 +1,14 @@
-export interface CreateProjectsDto {
-	name: string;
-	description: string;
-};
+import { IsNotEmpty } from 'class-validator';
 
-export interface UpdateProjectDto {
-	projectId: string;
-	name: string | undefined;
-	description: string | undefined;
+export class CreateProjectDto {
+    @IsNotEmpty()
+    name: string;
+
+    @IsNotEmpty()
+    description: string;
+}
+
+export class UpdateProjectDto {
+    name: string | undefined;
+    description: string | undefined;
 }

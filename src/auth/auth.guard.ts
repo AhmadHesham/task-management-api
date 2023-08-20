@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
             request['user'] = payload;
         } catch {
             // TODO: log the error
-            throw new UnauthorizedException();
+            throw new UnauthorizedException("JWT must be provided");
         }
 
         return true;

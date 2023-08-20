@@ -8,6 +8,8 @@ import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { ProjectModule } from './project/project.module';
 import { Project } from './project/entity/project.model';
+import { TaskModule } from './task/task.module';
+import { Task } from './task/entity/task.model';
 
 @Module({
     imports: [
@@ -22,8 +24,9 @@ import { Project } from './project/entity/project.model';
             username: process.env.DB_USERNAME,
             password: process.env.DB_PASSWORD,
             database: process.env.DB_NAME,
-            models: [User, Project],
+            models: [User, Project, Task],
         }),
+        TaskModule,
     ],
     controllers: [AppController],
     providers: [AppService],
