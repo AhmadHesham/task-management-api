@@ -5,7 +5,7 @@ import { Project } from './entity/project.model';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { TaskModule } from 'src/task/task.module';
 import { BullModule } from '@nestjs/bull';
-import {ProjectConsumer} from './consumer/project.consumer';
+import { ProjectConsumer } from './consumer/project.consumer';
 
 @Module({
     imports: [
